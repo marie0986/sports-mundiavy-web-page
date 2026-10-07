@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sports Mundiavy</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+      <a href="#inicio" class="logo-link">
+        <img src="logo.png" class="logo" alt="Sports Mundiavy" />
+      </a>
+
+      <nav class="navbar" id="navbar">
+        <a href="#inicio" class="active">INICIO</a>
+        <a href="#deportes">DEPORTES</a>
+        <a href="#cruceros">CRUCEROS</a>
+        <a href="#hoteles">HOTELES</a>
+        <a href="#destinos">DESTINOS</a>
+        <a href="#vuelos">VUELOS</a>
+        <a href="#ofertas">OFERTAS</a>
+        <a href="#mas">MÁS⌄</a>
+      </nav>
+
+      <div class="header-buttons">
+        <button id="searchButton" class="header-icon">🔍</button>
+
+        <button id="accountButton" class="header-icon">♙</button>
+
+        <button id="menuButton" class="menu-button">☰</button>
+      </div>
+    </header>
+
+    <!-- ================= BUSCADOR ================= -->
+
+    <div class="search-box" id="searchBox">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Buscar hoteles, deportes, viajes..."
+      />
+
+      <button id="searchButtonGo">BUSCAR</button>
+    </div>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="inicio">
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <h1>
+          VIVE TU PASIÓN<br />
+          VIAJA <span>SIN LÍMITES</span>
+        </h1>
+
+        <p>
+          Cruceros, Hoteles, Deportes y más.<br />
+          Todo en un solo lugar.
+        </p>
+
+        <a href="details.html?section=experiencias" class="main-button">
+          EXPLORA AHORA
+          <span>→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= CATEGORÍAS ================= -->
+
+    <section class="categories">
+      <a href="#cruceros" class="category">
+        <div class="category-icon blue-icon">🚢</div>
+
+        <h3>CRUCEROS</h3>
+
+        <p>
+          Descubre el mundo<br />
+          a bordo de experiencias<br />
+          inolvidables.
+        </p>
+      </a>
+
+      <a href="#hoteles" class="category">
+        <div class="category-icon gold-icon">🏨</div>
+
+        <h3>HOTELES</h3>
+
+        <p>
+          Encuentra el alojamiento<br />
+          perfecto para tu viaje.
+        </p>
+      </a>
+
+      <a href="#deportes" class="category">
+        <div class="category-icon green-icon">⚽</div>
+
+        <h3>DEPORTES</h3>
+
+        <p>
+          Equipos, eventos, noticias<br />
+          y todo sobre tu deporte<br />
+          favorito.
+        </p>
+      </a>
+
+      <a href="#vuelos" class="category">
+        <div class="category-icon lightblue-icon">✈</div>
+
+        <h3>VUELOS</h3>
+
+        <p>
+          Busca vuelos y encuentra<br />
+          tu próxima aventura.
+        </p>
+      </a>
+
+      <a href="#mas" class="category">
+        <div class="category-icon purple-icon">🛍</div>
+
+        <h3>Y MÁS</h3>
+
+        <p>
+          Experiencias, alquileres,<br />
+          seguros y mucho más.
+        </p>
+      </a>
+    </section>
+
+    <!-- ================= BUSCADOR DE VUELOS ================= -->
+
+    <section class="flight-search" id="vuelos">
+      <div class="flight-heading">
+        <span>PLANEA TU PRÓXIMO VIAJE</span>
+        <h2>BUSCA VUELOS</h2>
+        <p>Encuentra rutas y horarios para comenzar tu próxima aventura.</p>
+      </div>
+
+      <div class="flight-tabs" role="tablist" aria-label="Tipo de viaje">
+        <button class="flight-tab active" type="button" data-trip="roundtrip">IDA Y VUELTA</button>
+        <button class="flight-tab" type="button" data-trip="oneway">SOLO IDA</button>
+        <button class="flight-tab" type="button" data-trip="multi">MÚLTIPLES DESTINOS</button>
+      </div>
+
+      <form id="flightForm" class="flight-form">
+        <label>ORIGEN<input id="flightOrigin" list="airportList" type="text" placeholder="Ciudad o aeropuerto" autocomplete="off" required /></label>
+        <button id="swapFlights" class="swap-flights" type="button" aria-label="Intercambiar origen y destino">⇄</button>
+        <label>DESTINO<input id="flightDestination" list="airportList" type="text" placeholder="¿A dónde quieres ir?" autocomplete="off" required /></label>
+        <label>SALIDA<input id="flightDeparture" type="date" aria-label="Fecha de salida" required /></label>
+        <label id="returnField">REGRESO<input id="flightReturn" type="date" aria-label="Fecha de regreso" required /></label>
+        <label>VIAJEROS<select id="flightTravelers"><option>1 viajero</option><option>2 viajeros</option><option>3 viajeros</option><option>4 viajeros</option><option>5+ viajeros</option></select></label>
+        <label>CLASE<select id="flightClass"><option>Turista</option><option>Turista premium</option><option>Ejecutiva</option><option>Primera clase</option></select></label>
+        <button class="main-button" type="submit">BUSCAR VUELOS <span>→</span></button>
+      </form>
+      <datalist id="airportList">
+        <option value="Washington Dulles (IAD) - Estados Unidos"></option>
+        <option value="Washington Reagan (DCA) - Estados Unidos"></option>
+        <option value="Miami (MIA) - Estados Unidos"></option>
+        <option value="Madrid (MAD) - España"></option>
+        <option value="Ciudad de México (MEX) - México"></option>
+      </datalist>
+      <div id="flightResults" class="flight-results" aria-live="polite"></div>
+    </section>
+
+    <!-- ================= EXPERIENCIAS ================= -->
+
+    <main class="main" id="experiencias">
+      <div class="section-title">
+        <h2>EXPERIENCIAS DESTACADAS</h2>
+
+        <div class="title-decoration">─── ✦ ───</div>
+      </div>
+
+      <section class="cards">
+        <!-- CRUCERO -->
+
+        <section class="card" id="cruceros-card" aria-label="Tarjeta de cruceros">
+          <div class="card-image cruise-image">
+            <span class="tag blue-tag"> CRUCEROS </span>
+          </div>
+
+          <div class="card-content">
+            <h3>Caribe a tu Manera</h3>
+
+            <p class="description">8 días / 7 noches</p>
+
+            <p class="price">
+              Desde
+              <strong>$699</strong>
+              USD
+            </p>
+
+            <button
+              class="more-button"
+              data-page-section="cruceros"
+              data-title="Caribe a tu Manera"
+              data-description="Disfruta 8 días y 7 noches recorriendo increíbles destinos del Caribe."
+              data-image="https://images.unsplash.com/photo-1540946485063-a40da27545f8?auto=format&fit=crop&w=900&q=90"
+            >
+              VER MÁS →
+            </button>
+          </div>
+        </section>
+
+        <!-- HOTEL -->
+
+        <section class="card" id="hoteles-card" aria-label="Tarjeta de hoteles">
+          <div class="card-image hotel-image">
+            <span class="tag gold-tag"> HOTELES </span>
+          </div>
+
+          <div class="card-content">
+            <h3>Resorts Todo Incluido</h3>
+
+            <p class="description">Relájate y disfruta</p>
+
+            <p class="price orange-price">
+              Desde
+              <strong>$129</strong>
+              USD / noche
+            </p>
+
+            <button
+              class="more-button"
+              data-page-section="hoteles"
+              data-title="Resorts Todo Incluido"
+              data-description="Encuentra resorts con alojamiento, restaurantes, piscinas y actividades."
+              data-image="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=900&q=90"
+            >
+              VER MÁS →
+            </button>
+          </div>
+        </section>
+
+        <!-- DEPORTES -->
+
+        <section class="card" id="deportes-card" aria-label="Tarjeta de deportes">
+          <div class="card-image sport-image">
+            <span class="tag green-tag"> DEPORTES </span>
+          </div>
+
+          <div class="card-content">
+            <h3>Vive la Emoción</h3>
+
+            <p class="description">Entradas a eventos y torneos</p>
+
+            <p class="price green-price">
+              Desde
+              <strong>$50</strong>
+              USD
+            </p>
+
+            <button
+              class="more-button"
+              data-page-section="deportes"
+              data-title="Vive la Emoción"
+              data-description="Descubre eventos deportivos, torneos y experiencias para los amantes del deporte."
+              data-image="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=900&q=90"
+            >
+              VER MÁS →
+            </button>
+          </div>
+        </section>
+
+        <!-- VIAJES -->
+
+        <section class="card" id="destinos-card" aria-label="Tarjeta de destinos">
+          <div class="card-image destination-image">
+            <span class="tag purple-tag"> VIAJES </span>
+          </div>
+
+          <div class="card-content">
+            <h3>Destinos Increíbles</h3>
+
+            <p class="description">Aventura para todos</p>
+
+            <p class="price">
+              Desde
+              <strong>$299</strong>
+              USD
+            </p>
+
+            <button
+              class="more-button"
+              data-page-section="destinos"
+              data-title="Destinos Increíbles"
+              data-description="Explora destinos tropicales, ciudades, playas y aventuras para todos."
+              data-image="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=90"
+            >
+              VER MÁS →
+            </button>
+          </div>
+        </section>
+      </section>
+
+      <!-- ================= BANNER ================= -->
+
+      <section class="big-banner" id="ofertas">
+        <div class="banner-text">
+          <h2>TODO LO QUE AMAS,</h2>
+
+          <h3>EN UN SOLO LUGAR</h3>
+
+          <p>Viaja. Descubre. Juega. Vive.</p>
+
+          <button id="joinButton" class="main-button" data-page-section="ofertas">
+            ÚNETE A SPORTS MUNDIAVY →
+          </button>
+        </div>
+
+        <div class="banner-images">
+          <div class="banner-photo banner-cruise"></div>
+
+          <div class="banner-photo banner-hotel"></div>
+
+          <div class="banner-photo banner-sport"></div>
+
+          <div class="banner-photo banner-beach"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= SECCIONES DE NAVEGACIÓN ================= -->
+
+    <section class="category-details" aria-label="Secciones de experiencias">
+      <section class="category-detail cruise-detail" id="cruceros">
+        <div>
+          <span class="detail-kicker">EXPERIENCIAS EN EL MAR</span>
+          <h2>CRUCEROS</h2>
+          <p>Descubre rutas por el Caribe, Mediterráneo y los destinos más increíbles a bordo de cruceros llenos de experiencias.</p>
+          <a class="main-button" href="details.html?section=cruceros">VER CRUCEROS →</a>
+        </div>
+      </section>
+
+      <section class="category-detail hotel-detail" id="hoteles">
+        <div>
+          <span class="detail-kicker">DESCANSO Y CONFORT</span>
+          <h2>HOTELES</h2>
+          <p>Encuentra resorts, hoteles urbanos y alojamientos todo incluido para disfrutar cada momento de tu viaje.</p>
+          <a class="main-button" href="details.html?section=hoteles">VER HOTELES →</a>
+        </div>
+      </section>
+
+      <section class="category-detail sport-detail" id="deportes">
+        <div>
+          <span class="detail-kicker">PASIÓN Y EMOCIÓN</span>
+          <h2>DEPORTES</h2>
+          <p>Vive partidos, torneos y eventos deportivos con entradas y experiencias para tus equipos favoritos.</p>
+          <a class="main-button" href="details.html?section=deportes">VER DEPORTES →</a>
+        </div>
+      </section>
+
+      <section class="category-detail destination-detail" id="destinos">
+        <div>
+          <span class="detail-kicker">TU PRÓXIMA AVENTURA</span>
+          <h2>DESTINOS</h2>
+          <p>Inspírate con playas, ciudades y escapadas únicas diseñadas para viajar, descubrir y crear recuerdos.</p>
+          <a class="main-button" href="details.html?section=destinos">VER DESTINOS →</a>
+        </div>
+      </section>
+
+      <section class="category-detail store-detail" id="tienda">
+        <div>
+          <span class="detail-kicker">EQUÍPATE PARA TU PRÓXIMA AVENTURA</span>
+          <h2>TIENDA SPORTS MUNDIAVY</h2>
+          <p>Ropa, balones, raquetas, zapatillas y accesorios para disfrutar tus deportes favoritos.</p>
+          <a class="main-button" href="details.html?section=tienda">VER TIENDA →</a>
+        </div>
+      </section>
+    </section>
+
+    <!-- ================= NEWSLETTER ================= -->
+
+    <section class="newsletter" id="mas">
+      <div class="newsletter-plane">✈</div>
+
+      <div class="newsletter-text">
+        <strong> SUSCRÍBETE Y RECIBE </strong>
+
+        <span> OFERTAS EXCLUSIVAS </span>
+      </div>
+
+      <form id="newsletterForm">
+        <input
+          type="email"
+          id="email"
+          placeholder="Tu correo electrónico"
+          required
+        />
+
+        <button type="submit">SUSCRÍBEME</button>
+      </form>
+
+      <div class="newsletter-palm">🌴</div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer id="contacto">
+      <div class="footer-about">
+        <img src="logo.png" class="footer-logo" alt="Sports Mundiavy" />
+
+        <p>
+          Tu mundo de deportes, viajes y experiencias.
+          <br />
+          Cruceros, hoteles, eventos deportivos y más,
+          <br />
+          todo en un solo lugar.
+        </p>
+
+        <div class="socials">
+          <span>f</span>
+          <span>◎</span>
+          <span>♪</span>
+          <span>▶</span>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h4>NAVEGA</h4>
+
+        <a href="#inicio">Inicio</a>
+        <a href="#deportes">Deportes</a>
+        <a href="#cruceros">Cruceros</a>
+        <a href="#hoteles">Hoteles</a>
+        <a href="#destinos">Destinos</a>
+        <a href="#ofertas">Ofertas</a>
+        <a href="#mas">Más</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>DEPORTES</h4>
+
+        <a href="#deportes">Fútbol</a>
+        <a href="#deportes">Baloncesto</a>
+        <a href="#deportes">Tenis</a>
+        <a href="#deportes">Voleibol</a>
+        <a href="#deportes">Béisbol</a>
+        <a href="#deportes">Golf</a>
+        <a href="#deportes">Más Deportes</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>AYUDA</h4>
+
+        <a href="#contacto"> Centro de Ayuda </a>
+
+        <a href="#contacto"> Preguntas Frecuentes </a>
+
+        <a href="#contacto"> Términos y Condiciones </a>
+
+        <a href="#contacto"> Política de Privacidad </a>
+
+        <a href="#contacto"> Contacto </a>
+      </div>
+
+      <div class="footer-column">
+        <h4>CONTACTO</h4>
+
+        <p>✉ natmarmo@outlook.com</p>
+
+        <p>☎ +1 (800) 123-4567</p>
+
+        <p>⌖ Miami, Florida, USA</p>
+      </div>
+
+      <div class="copyright">
+        © 2026 Sports Mundiavy. Todos los derechos reservados.
+      </div>
+    </footer>
+
+    <!-- ================= MODAL ================= -->
+
+    <div class="modal" id="modal">
+      <div class="modal-content">
+        <button id="closeModal" class="close-modal">×</button>
+
+        <small> SPORTS MUNDIAVY </small>
+
+        <img id="modalImage" class="modal-image" src="" alt="" />
+
+        <h2 id="modalTitle"></h2>
+
+        <p id="modalDescription"></p>
+
+        <button id="modalAction" class="main-button">QUIERO ESTA EXPERIENCIA →</button>
+      </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

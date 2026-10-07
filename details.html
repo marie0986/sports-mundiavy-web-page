@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sports Mundiavy | Detalles</title>
+    <link rel="stylesheet" href="details.css" />
+  </head>
+  <body>
+    <header class="details-header">
+      <a href="index.html" class="brand">SPORTS <span>MUNDIAVY</span></a>
+      <a href="index.html" class="back-link">← VOLVER AL INICIO</a>
+    </header>
+
+    <main class="details-main">
+      <section class="details-hero">
+        <img id="detailsImage" src="" alt="" />
+        <div class="details-copy">
+          <img id="detailsLogo" class="details-logo" src="logo.png" alt="Sports Mundiavy" hidden />
+          <span id="detailsKicker"></span>
+          <h1 id="detailsTitle"></h1>
+          <p id="detailsDescription"></p>
+          <div class="details-actions">
+            <a id="detailsContact" href="mailto:natmarmo@outlook.com" class="primary-button">QUIERO MÁS INFORMACIÓN →</a>
+            <a href="index.html" class="secondary-button">← VER OTRAS EXPERIENCIAS</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="membership-overview" id="membershipOverview" hidden>
+        <div class="catalog-heading">
+          <span>TODO SPORTS MUNDIAVY</span>
+          <h2>UNA SOLA MEMBRESÍA, MUCHAS EXPERIENCIAS</h2>
+          <p>Encuentra inspiración, compara opciones y recibe ayuda para organizar tu próxima aventura.</p>
+        </div>
+        <div class="membership-grid">
+          <article><div class="membership-icon">⚽</div><h3>Deportes</h3><p>Vóley, básquet, fútbol americano, pádel, tenis, natación, béisbol, softball, pickleball, ping pong y más.</p><a href="details.html?section=deportes">EXPLORAR DEPORTES →</a></article>
+          <article><div class="membership-icon">🏨</div><h3>Hoteles</h3><p>Hoteles urbanos, resorts todo incluido, villas frente al mar y alojamientos en destinos internacionales.</p><a href="details.html?section=hoteles">VER HOTELES →</a></article>
+          <article><div class="membership-icon">✈</div><h3>Destinos</h3><p>París, Nueva York, Tokio, Roma, Dubái, Bali, Santorini, Cancún, Sídney y muchas ciudades más.</p><a href="details.html?section=destinos">VER DESTINOS →</a></article>
+          <article><div class="membership-icon">🛫</div><h3>Vuelos</h3><p>Busca vuelos de ida y vuelta, solo ida o múltiples destinos con fechas, viajeros y clase de cabina.</p><a href="index.html#vuelos">BUSCAR VUELOS →</a></article>
+        </div>
+      </section>
+
+      <section class="catalog-section">
+        <div class="catalog-heading">
+          <span>ELIGE TU EXPERIENCIA</span>
+          <h2 id="optionsTitle">OPCIONES DISPONIBLES</h2>
+        </div>
+        <div class="options-grid" id="optionsGrid"></div>
+      </section>
+
+      <section class="sports-gallery" id="sportsGallery" hidden>
+        <div class="catalog-heading">
+          <span>LA EMOCIÓN DEL DEPORTE</span>
+          <h2>VIVE CADA MOMENTO</h2>
+        </div>
+        <div class="sports-gallery-grid">
+          <figure><img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?auto=format&fit=crop&w=900&q=90" alt="Partido de vóley" /><figcaption>Vóley</figcaption></figure>
+          <figure><img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=900&q=90" alt="Partido de básquet" /><figcaption>Básquet</figcaption></figure>
+          <figure><img src="https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=900&q=90" alt="Partido de fútbol americano" /><figcaption>Fútbol americano</figcaption></figure>
+          <figure><img src="https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=900&q=90" alt="Partido de béisbol" /><figcaption>Béisbol</figcaption></figure>
+          <figure><img src="sportsballs.png" alt="Pelotas de softball" /><figcaption>Softball</figcaption></figure>
+          <figure><img src="https://images.unsplash.com/photo-1534158914592-062992f30f7a?auto=format&fit=crop&w=900&q=90" alt="Mesa de ping pong" /><figcaption>Ping pong</figcaption></figure>
+          <figure><img src="https://images.unsplash.com/photo-1530915365347-a0e7c2f9c7a1?auto=format&fit=crop&w=900&q=90" alt="Partido de tenis" /><figcaption>Tenis</figcaption></figure>
+          <figure><img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=900&q=90" alt="Cancha de pádel" /><figcaption>Pádel</figcaption></figure>
+          <figure><img src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=900&q=90" alt="Partido de pickleball" /><figcaption>Pickleball</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="details-info">
+        <h2>TODO LO QUE INCLUYE</h2>
+        <div class="info-grid">
+          <article><strong>✦</strong><h3>Experiencias seleccionadas</h3><p>Opciones pensadas para que disfrutes cada parte de tu viaje.</p></article>
+          <article><strong>✓</strong><h3>Atención personalizada</h3><p>Te ayudamos a elegir la alternativa ideal para ti.</p></article>
+          <article><strong>◆</strong><h3>Reserva sencilla</h3><p>Solicita información y recibe asistencia para organizarlo todo.</p></article>
+        </div>
+      </section>
+    </main>
+
+    <footer>© 2026 Sports Mundiavy. Todos los derechos reservados.</footer>
+    <script src="details.js"></script>
+  </body>
+</html>
